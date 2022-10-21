@@ -1,3 +1,7 @@
+*{
+    margin: 0;
+    padding: 0;
+}
 .navbar {
   padding: 1.6rem 4rem;
   background-color: #08637a;
