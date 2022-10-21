@@ -1,16 +1,16 @@
 const rockBtn = document.getElementById("rock-btn");
-const paperbtn = document.getElementById("paper-btn");
-const scissorbtn = document.getElementById("scissor-btn");
+const paperBtn = document.getElementById("paper-btn");
+const scissorBtn = document.getElementById("scissor-btn");
 
-const userchoice = document.getElementById("user-choice");
-const computerchoice = document.getElementById("computer-choice");
+const userChoice = document.getElementById("user-choice");
+const computerChoice = document.getElementById("computer-choice");
 const result = document.getElementById("result");
 
-const userscore = document.getElementById("user-score");
-const computerscore = document.getElementById("computer-score");
+const userScore = document.getElementById("user-score");
+const computerScore = document.getElementById("computer-score");
 
-let cmpscore = 0;
-let usrscore = 0;
+let cmpScore = 0;
+let usrScore = 0;
 
 
 
@@ -18,100 +18,100 @@ let usrscore = 0;
 
  
 
-const increment = (string) => {
+const increment = (string)=>{
     if(string=="computer")
     {
-        cmpscore++;
-        computerscore.innerHTML=cmpscore;
+        cmpScore++;
+        computerScore.innerHTML=cmpScore;
     }
 else if (string=="user")
 {
-    usrscore++;
-    userscore.innerHTML=usrscore;
+    usrScore++;
+    userScore.innerHTML=usrScore;
 }
 }
 
 const rungame = (name) => {
-  const userinput = name;
+  const userInput = name;
   const values = ["Rock", "Paper", "Scissor"];
 
-  const randomnumber = Math.floor(Math.random() * 3);
+  const randomNumber = Math.floor(Math.random()*3);
 
-  const computerinput = values[randomnumber];
-
-
-
-
-
-  userchoice.innerHTML="You pick: " + userinput;
-  computerchoice.innerHTML="Computer pick: " + computerinput;
+  const computerInput = values[randomNumber];
 
 
 
 
 
+  userChoice.innerHTML="You pick: " + userInput;
+  computerChoice.innerHTML="Computer pick: " + computerInput;
 
-  if(userinput=="Rock")
+
+
+
+
+
+  if(userInput=="Rock")
   {
-    if(computerinput=="Rock")
+    if(computerInput=="Rock")
     {
         result.innerHTML = "Draw";
     }
-  }
-  else if(computerinput=="Paper")
+  
+  else if(computerInput=="Paper")
   {
     result.innerHTML = "You lose";
-    increment("Computer");
+    increment("computer");
   }
   else{
     result.innerHTML = "You Won";
     increment("user");
   }
+  }
 
-
-  if(userinput=="Paper")
+  if(userInput=="Paper")
   {
-    if(computerinput=="Paper")
+    if(computerInput=="Paper")
     {
         result.innerHTML = "Draw";
     }
-  }
-  else if(computerinput=="Scissor")
+  
+  else if(computerInput=="Scissor")
   {
     result.innerHTML = "You lose";
-    increment("Computer");
+    increment("computer");
   }
   else{
     result.innerHTML = "You Won";
     increment("user");
-  }
+  }}
 
-  if(userinput=="Scissor")
+  if(userInput=="Scissor")
   {
-    if(computerinput=="Scissor")
+    if(computerInput=="Scissor")
     {
         result.innerHTML = "Draw";
     }
-  }
-  else if(computerinput=="Rock")
+  
+  else if(computerInput=="Rock")
   {
     result.innerHTML = "You lose";
-    increment("Computer");
+    increment("computer");
   }
   else{
     result.innerHTML = "You Won";
     increment("user");
-  }
+  }}
 
 }
 rockBtn.addEventListener("click",()=>{
     rungame("Rock");
 })
 
-paperbtn.addEventListener("click",()=>{
+paperBtn.addEventListener("click",()=>{
     rungame("Paper");
 })
 
-scissorbtn.addEventListener("click",()=>{
+scissorBtn.addEventListener("click",()=>{
     rungame("Scissor");
 })
